@@ -1,0 +1,82 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 55;
+	objects = {
+
+/* Begin PBXFileReference section */
+		98C3A9F02BBD784600E7123D /* 1.3 - Constants, Variables, and Data Types.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = "1.3 - Constants, Variables, and Data Types.playground"; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
+/* End PBXFileReference section */
+
+/* Begin PBXGroup section */
+		98D586222BBD72A6003686BF = {
+			isa = PBXGroup;
+			children = (
+				98D586292BBD72E4003686BF /* 1 - Getting Start */,
+			);
+			sourceTree = "<group>";
+		};
+		98D586292BBD72E4003686BF /* 1 - Getting Start */ = {
+			isa = PBXGroup;
+			children = (
+				98C3A9F02BBD784600E7123D /* 1.3 - Constants, Variables, and Data Types.playground */,
+			);
+			path = "1 - Getting Start";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXProject section */
+		98D586232BBD72A6003686BF /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				BuildIndependentTargetsInParallel = 1;
+				LastUpgradeCheck = 1310;
+			};
+			buildConfigurationList = 98D586262BBD72A6003686BF /* Build configuration list for PBXProject "ReviewSwift" */;
+			compatibilityVersion = "Xcode 13.0";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 98D586222BBD72A6003686BF;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+			);
+		};
+/* End PBXProject section */
+
+/* Begin XCBuildConfiguration section */
+		98D586272BBD72A6003686BF /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+			};
+			name = Debug;
+		};
+		98D586282BBD72A6003686BF /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		98D586262BBD72A6003686BF /* Build configuration list for PBXProject "ReviewSwift" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				98D586272BBD72A6003686BF /* Debug */,
+				98D586282BBD72A6003686BF /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 98D586232BBD72A6003686BF /* Project object */;
+}
