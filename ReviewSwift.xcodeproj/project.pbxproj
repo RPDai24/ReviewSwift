@@ -8,6 +8,7 @@
 
 /* Begin PBXFileReference section */
 		98C3A9F02BBD784600E7123D /* 1.3 - Constants, Variables, and Data Types.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = "1.3 - Constants, Variables, and Data Types.playground"; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
+		98C3A9F32BBDC8BB00E7123D /* 1.4 - Operators.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = "1.4 - Operators.playground"; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
 /* End PBXFileReference section */
 
 /* Begin PBXGroup section */
@@ -22,6 +23,7 @@
 			isa = PBXGroup;
 			children = (
 				98C3A9F02BBD784600E7123D /* 1.3 - Constants, Variables, and Data Types.playground */,
+				98C3A9F32BBDC8BB00E7123D /* 1.4 - Operators.playground */,
 			);
 			path = "1 - Getting Start";
 			sourceTree = "<group>";
