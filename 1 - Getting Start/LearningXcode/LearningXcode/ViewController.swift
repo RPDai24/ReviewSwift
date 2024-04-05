@@ -9,22 +9,28 @@ import UIKit
 
 class ViewController: UIViewController {
     
+    @IBOutlet var myButton: UIButton!
+    
+    var lightOn = true
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
-
-        // Warnings
-//        let x = 4
-        // Compiler Errors
-//        navigationController.title = "Debugging"
-        // Bugs
-        var names = ["kkk", "jj"]
-        names.removeFirst()
-        names.removeFirst()
-        names.removeFirst()
+        myButton.tintColor = .red
         
     }
     
+    fileprivate func updateUI() {
+        if lightOn {
+            view.backgroundColor = .white
+        } else {
+            view.backgroundColor = .black
+        }
+    }
     
+    @IBAction func buttonPressed(_ sender: Any) {
+        lightOn.toggle()
+        updateUI()
+    }
 }
 
