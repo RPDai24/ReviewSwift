@@ -33,6 +33,7 @@
                                         <constraints>
                                             <constraint firstAttribute="trailing" secondItem="85F-t2-I4j" secondAttribute="trailing" constant="8" id="A73-t6-hVl"/>
                                             <constraint firstAttribute="bottom" secondItem="85F-t2-I4j" secondAttribute="bottom" constant="8" id="ef1-c4-7dw"/>
+                                            <constraint firstItem="85F-t2-I4j" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="Q3n-si-ZW9" secondAttribute="leading" constant="20" symbolic="YES" id="oRH-d9-sje"/>
                                         </constraints>
                                     </view>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="LuK-pA-Ird">
@@ -199,7 +200,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="61" y="92"/>
+            <point key="canvasLocation" x="60" y="91.706161137440759"/>
         </scene>
     </scenes>
     <resources>
