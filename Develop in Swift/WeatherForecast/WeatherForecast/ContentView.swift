@@ -10,8 +10,8 @@ import SwiftUI
 struct ContentView: View {
     var body: some View {
         HStack {
-            DayForecast()
-            DayForecast()
+            DayForecast(day: "Mon", high: 70, low: 50)
+            DayForecast(day: "Tue", high: 68, low: 55)
         }
     }
 }
@@ -21,13 +21,18 @@ struct ContentView: View {
 }
 
 struct DayForecast: View {
+    let day: String
+    let high: Int
+    let low: Int
+    
     var body: some View {
         VStack {
-            Text("Mon")
+            Text(day)
             Image(systemName: "sun.max.fill")
                 .foregroundStyle(Color.yellow)
-            Text("High: 70")
-            Text("Low: 50")
+            Text("\(high)")
+            Text("\(low)")
+            
         }
         .padding()
     }
