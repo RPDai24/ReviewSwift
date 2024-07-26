@@ -20,8 +20,6 @@ struct ContentView: View {
                     DayForecast(day: "Sat", isRainy: true, high: 68, low: 55)
                     DayForecast(day: "Sun", isRainy: true, high: 68, low: 55)
                 }
-                
-                
             }
         }
     }
