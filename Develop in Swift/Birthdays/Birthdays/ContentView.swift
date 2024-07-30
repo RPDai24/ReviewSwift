@@ -13,6 +13,9 @@ struct ContentView: View {
         Friend(name: "John Court", birthday: Date(timeIntervalSince1970: 0))
     ]
     
+    @State private var newName: String = ""
+    @State private var newDate = Date.now
+    
     var body: some View {
         NavigationStack {
             List(friends, id: \.name) { friend in
@@ -23,6 +26,12 @@ struct ContentView: View {
                 }
             }
             .navigationTitle("Birthdays")
+            .safeAreaInset(edge: .bottom) {
+                VStack(alignment: .center, spacing: 20) {
+                    Text("New Birthday")
+                        .font(.headline)
+                }
+            }
         }
 
     }
