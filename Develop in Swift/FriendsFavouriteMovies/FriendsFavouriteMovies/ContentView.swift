@@ -17,8 +17,7 @@ struct ContentView: View {
             List {
                 ForEach(Movies) { movie in
                     NavigationLink {
-                        Text(movie.title)
-                            .navigationTitle("Movie")
+                        MovieDetail(movie: movie)
                     } label: {
                         Text(movie.title)
                     }
