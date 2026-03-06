@@ -10,7 +10,7 @@ import SwiftData
 
 struct FriendList: View {
     @Query(sort: \Friend.name) private var friends: [Friend]
-    @Environment(\.modelContext) private var context
+//    @Environment(\.modelContext) private var context
     
     var body: some View {
         List {
@@ -18,10 +18,10 @@ struct FriendList: View {
                 Text(friend.name)
             }
         }
-        .task {
-            context.insert(Friend(name: "Elena"))
-            context.insert(Friend(name: "Rody"))
-        }
+//        .task {
+//            context.insert(Friend(name: "Elena"))
+//            context.insert(Friend(name: "Rody"))
+//        }
 
         
     }
@@ -29,6 +29,7 @@ struct FriendList: View {
 
 #Preview {
     FriendList()
-        .modelContainer(for: Friend.self, inMemory: true)
+//        .modelContainer(for: Friend.self, inMemory: true)
+        .modelContainer(SamepleData.shared.modelContainer)
         
 }

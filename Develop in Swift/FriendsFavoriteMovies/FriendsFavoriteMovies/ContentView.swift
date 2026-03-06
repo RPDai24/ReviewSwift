@@ -23,5 +23,6 @@ struct ContentView: View {
 
 #Preview {
     ContentView()
-        .modelContainer(for: Friend.self, inMemory: true)
+//        .modelContainer(for: Friend.self, inMemory: true)
+        .modelContainer(SamepleData.shared.modelContainer)
 }
