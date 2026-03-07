@@ -12,6 +12,8 @@ struct MovieList: View {
     @Query(sort: \Movie.title) private var movies: [Movie]
     @Environment(\.modelContext) private var context
     
+    @State private var newMovie: Movie?
+    
     var body: some View {
         NavigationSplitView {
             List {
@@ -31,6 +33,11 @@ struct MovieList: View {
                     EditButton()
                 }
             }
+            .sheet(item: $newMovie) { movie in
+                NavigationStack {
+                    MovieDetail(movie: movie)
+                }
+            }
             
         } detail: {
             Text("Select a movie")
@@ -41,7 +48,9 @@ struct MovieList: View {
     }
     
     private func addMovie() {
-        context.insert(Movie(title: "New Movie", releaseDate: .now))
+        let newMovie = Movie(title: "", releaseDate: .now)
+        context.insert(newMovie)
+        self.newMovie = newMovie
     }
     
     private func deleteMovies(indexes: IndexSet) {
