@@ -13,6 +13,8 @@ class Movie {
     var title: String
     var releaseDate: Date
     
+    var favoriteBy = [Friend]()
+    
     init(title: String, releaseDate: Date) {
         self.title = title
         self.releaseDate = releaseDate
