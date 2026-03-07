@@ -9,10 +9,19 @@ import SwiftUI
 import SwiftData
 
 struct MovieList: View {
-    @Query(sort: \Movie.title) private var movies: [Movie]
+    @Query private var movies: [Movie]
     @Environment(\.modelContext) private var context
     
     @State private var newMovie: Movie?
+    
+    init(titleFilter: String = "") {
+        let predicate = #Predicate<Movie> { movie in
+            titleFilter.isEmpty || movie.title.localizedStandardContains(titleFilter)
+        }
+        
+        // hidden properties prefixed with an underscore _
+        _movies = Query(filter: predicate, sort: \Movie.title)
+    }
     
     var body: some View {
         NavigationSplitView {
@@ -64,5 +73,10 @@ struct MovieList: View {
 
 #Preview {
     MovieList()
+        .modelContainer(SamepleData.shared.modelContainer)
+}
+
+#Preview("Filtered") {
+    MovieList(titleFilter: "tr")
         .modelContainer(SamepleData.shared.modelContainer)
 }
