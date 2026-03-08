@@ -24,29 +24,35 @@ struct MovieList: View {
     }
     
     var body: some View {
-            List {
-                ForEach(movies) { movie in
-                    NavigationLink(movie.title) {
-                        MovieDetail(movie: movie)
+        Group {
+            if !movies.isEmpty {
+                List {
+                    ForEach(movies) { movie in
+                        NavigationLink(movie.title) {
+                            MovieDetail(movie: movie)
+                        }
                     }
+                    .onDelete(perform: deleteMovies(indexes:))
                 }
-                .onDelete(perform: deleteMovies(indexes:))
+            } else {
+                ContentUnavailableView("Add Movies", systemImage: "film.stack")
             }
-            .navigationTitle("Movies")
-            .toolbar {
-                ToolbarItem {
-                    Button("Add movie", systemImage: "plus", action: addMovie)
-                }
-                ToolbarItem(placement: .topBarTrailing) {
-                    EditButton()
-                }
+        }
+        .navigationTitle("Movies")
+        .toolbar {
+            ToolbarItem {
+                Button("Add movie", systemImage: "plus", action: addMovie)
             }
-            .sheet(item: $newMovie) { movie in
-                NavigationStack {
-                    MovieDetail(movie: movie, isNew: true)
-                }
-                .interactiveDismissDisabled()
+            ToolbarItem(placement: .topBarTrailing) {
+                EditButton()
             }
+        }
+        .sheet(item: $newMovie) { movie in
+            NavigationStack {
+                MovieDetail(movie: movie, isNew: true)
+            }
+            .interactiveDismissDisabled()
+        }
 
     }
     
@@ -75,5 +81,12 @@ struct MovieList: View {
     NavigationStack {
         MovieList(titleFilter: "tr")
             .modelContainer(SamepleData.shared.modelContainer)
+    }
+}
+
+#Preview("Empty List") {
+    NavigationStack {
+        MovieList()
+            .modelContainer(for: Movie.self, inMemory: true)
     }
 }
