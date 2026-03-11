@@ -33,7 +33,7 @@ class DataContainer {
             try badgeManager.loadBadgesIfNeeded()
             
             if includeSampleMoments {
-                loadSampleData()
+                try loadSampleData()
             }
             try context.save()
         } catch  {
@@ -43,9 +43,10 @@ class DataContainer {
         
     }
     
-    private func loadSampleData() {
+    private func loadSampleData() throws {
         for moment in Moment.sampleData {
             context.insert(moment)
+            try badgeManager.unlockBadges(newMoment: moment)
         }
     }
 }
