@@ -1,0 +1,36 @@
+//
+//  StreakCalculator.swift
+//  GratefulMoments
+//
+//  Created by hh on 11/03/2026.
+//
+
+import Foundation
+
+struct StreakCalculator {
+    let calender = Calendar.current
+    
+    /// Counts the number of days in a row a moment has been saved
+    ///
+    /// Days are measured from the end of the day, rather than whatever time of day it is currently
+    func calculateStreak(for moments: [Moment]) -> Int {
+        let startOfToday = calender.startOfDay(for: .now)
+        let endOfToday = calender.date(byAdding: DateComponents(day: 1, second: -1), to: startOfToday)!
+        
+        // Ex. [0, 0, 1, 2, 4, 5]
+        let daysAgoArray = moments
+            .reversed()
+            .map(\.timestamp)
+            .map { calender.dateComponents([.day], from: $0, to: endOfToday) }
+            .compactMap { $0.day }
+            
+        var streak = 0
+        for daysAgo in daysAgoArray {
+            if daysAgo == streak {
+                streak += 1
+            }
+        }
+        
+        return streak
+    }
+}
