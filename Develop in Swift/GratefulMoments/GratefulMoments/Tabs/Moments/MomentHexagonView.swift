@@ -75,3 +75,4 @@ struct MomentHexagonView: View {
         MomentHexagonView(moment: Moment.sample, layout: .large)
     }
 }
+
