@@ -24,10 +24,19 @@ struct StreakCalculator {
             .map { calender.dateComponents([.day], from: $0, to: endOfToday) }
             .compactMap { $0.day }
             
+        print(daysAgoArray)
         var streak = 0
         for daysAgo in daysAgoArray {
             if daysAgo == streak {
+                print("Streak already here. Don't increase the streak.")
+                continue
+            } else if daysAgo == streak + 1 {
+                print("A moment exists the day after the current streak")
                 streak += 1
+                print("Increasing streak to \(streak)")
+            } else {
+                print("Streak of \(streak) broken with daysAgo \(daysAgo)")
+                break
             }
         }
         
